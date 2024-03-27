@@ -1,21 +1,20 @@
-import { useCallback } from 'react'
 import BasicLayout from '../../layouts/BasicLayout'
 import { Outlet, useNavigate } from 'react-router-dom'
 
 const IndexPage = (props) => {
   const navigate = useNavigate()
 
-  const handleClickList = useCallback(() => {
+  const handleClickList = () => {
     navigate({ pathname: 'list' })
-  }, [])
+  }
 
-  const handleClickAdd = useCallback(() => {
+  const handleClickAdd = () => {
     navigate({ pathname: 'add' })
-  }, [])
+  }
 
   return (
     <BasicLayout>
-      <div className="w-full flex m-2 p-2 ">
+      <div className="w-full flex m-2 p-2">
         <div
           className="text-xl m-1 p-2 w-20 font-extrabold text-center underline"
           onClick={handleClickList}
@@ -29,7 +28,7 @@ const IndexPage = (props) => {
           ADD
         </div>
       </div>
-      <div className="flex flex-wrap w-full">
+      <div className="flex flex-wrap w-full bg-white">
         <Outlet />
       </div>
     </BasicLayout>
