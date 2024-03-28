@@ -45,9 +45,17 @@ const useCustomMove = () => {
     })
   }
 
+  const moveToRead = (num) => {
+    navigate({
+      pathname: `../read/${num}`,
+      search: queryDefault
+    })
+  }
+
   return {
     moveToList,
     moveToModify,
+    moveToRead,
     page,
     size,
     refresh
